@@ -27,10 +27,19 @@
     <ClCompile Include="src\runtime\memory\MemoryManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\runtime\memory\Allocator.cpp">
+    <ClCompile Include="src\runtime\memory\allocators\Allocator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\runtime\memory\StackAllocator.cpp">
+    <ClCompile Include="src\runtime\memory\allocators\LinearAllocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\runtime\memory\allocators\StackAllocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\runtime\memory\allocators\PoolAllocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\runtime\memory\allocators\FreeListAllocator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,13 +62,22 @@
     <ClInclude Include="src\runtime\memory\Allocators.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\runtime\memory\Allocator.h">
+    <ClInclude Include="src\runtime\memory\allocators\Allocator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\runtime\memory\AllocatorUtility.h">
+    <ClInclude Include="src\runtime\memory\allocators\LinearAllocator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\runtime\memory\StackAllocator.h">
+    <ClInclude Include="src\runtime\memory\utilities\AllocatorUtility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\memory\allocators\StackAllocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\memory\allocators\PoolAllocator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\memory\allocators\FreeListAllocator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

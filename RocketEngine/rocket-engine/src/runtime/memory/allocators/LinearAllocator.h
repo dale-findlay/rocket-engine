@@ -8,6 +8,7 @@ namespace Rocket
 	{
 		class LinearAllocator : public Allocator 
 		{
+		public:
 			LinearAllocator(size_t size, void* start);
 			~LinearAllocator();
 

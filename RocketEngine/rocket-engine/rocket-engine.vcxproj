@@ -147,7 +147,9 @@
     <ClCompile Include="src\Launch.cpp" />
     <ClCompile Include="src\runtime\Engine.cpp" />
     <ClCompile Include="src\runtime\memory\allocators\Allocator.cpp" />
+    <ClCompile Include="src\runtime\memory\allocators\FreeListAllocator.cpp" />
     <ClCompile Include="src\runtime\memory\allocators\LinearAllocator.cpp" />
+    <ClCompile Include="src\runtime\memory\allocators\PoolAllocator.cpp" />
     <ClCompile Include="src\runtime\memory\MemoryManager.cpp" />
     <ClCompile Include="src\runtime\memory\allocators\StackAllocator.cpp" />
   </ItemGroup>
@@ -157,7 +159,9 @@
     <ClInclude Include="src\runtime\Engine.h" />
     <ClInclude Include="src\runtime\memory\allocators\Allocator.h" />
     <ClInclude Include="src\runtime\memory\Allocators.h" />
+    <ClInclude Include="src\runtime\memory\allocators\FreeListAllocator.h" />
     <ClInclude Include="src\runtime\memory\allocators\LinearAllocator.h" />
+    <ClInclude Include="src\runtime\memory\allocators\PoolAllocator.h" />
     <ClInclude Include="src\runtime\memory\utilities\AllocatorUtility.h" />
     <ClInclude Include="src\runtime\memory\MemoryManager.h" />
     <ClInclude Include="src\runtime\memory\allocators\StackAllocator.h" />

@@ -3,7 +3,7 @@
 Rocket::Memory::StackAllocator::StackAllocator(size_t size, void* start)
 	: Allocator(size, start), m_CurrentPosition(start)
 {
-	ASSERT(size > 0);
+	ROCKETASSERT(size > 0);
 }
 
 Rocket::Memory::StackAllocator::~StackAllocator()
@@ -13,7 +13,7 @@ Rocket::Memory::StackAllocator::~StackAllocator()
 
 void* Rocket::Memory::StackAllocator::Allocate(size_t size, uint8 alignment)
 {
-	ASSERT(size > 0);
+	ROCKETASSERT(size > 0);
 
 	const size_t allocationHeaderSize = sizeof(StackAllocatorHeader);
 	

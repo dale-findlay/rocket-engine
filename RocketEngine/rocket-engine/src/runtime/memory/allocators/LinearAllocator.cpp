@@ -3,7 +3,7 @@
 Rocket::Memory::LinearAllocator::LinearAllocator(size_t size, void* start)
     : Allocator(size, start), m_CurrentPosition(start)
 {
-    ASSERT(size > 0);
+    ROCKETASSERT(size > 0);
 }
 
 Rocket::Memory::LinearAllocator::~LinearAllocator()
@@ -13,7 +13,7 @@ Rocket::Memory::LinearAllocator::~LinearAllocator()
 
 void* Rocket::Memory::LinearAllocator::Allocate(size_t size, uint8 alignment)
 {    
-    ASSERT(size > 0);
+    ROCKETASSERT(size > 0);
 
     uint8 adjustment = AllocatorUtility::CalculateAdjustment(m_CurrentPosition, alignment);
 
@@ -29,7 +29,7 @@ void* Rocket::Memory::LinearAllocator::Allocate(size_t size, uint8 alignment)
 void Rocket::Memory::LinearAllocator::Deallocate(void* p)
 {
     //this is probably overkill - use Clear()!
-    ASSERT(false);
+    ROCKETASSERT(false);
 }
 
 void Rocket::Memory::LinearAllocator::Clear()

@@ -33,7 +33,7 @@ namespace Rocket
 				uint64 maskBytes = static_cast<uint64>(alignment - 1);
 				uint64 pBytesOut = reinterpret_cast<uint64>(p) & maskBytes;
 
-				uint8 adjustment = alignment - pBytesOut;
+				uint8 adjustment = (uint8)((uint64)alignment - pBytesOut);
 
 				//Check if p is already aligned.
 				if (adjustment == alignment)

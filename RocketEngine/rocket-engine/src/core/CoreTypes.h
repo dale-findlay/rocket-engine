@@ -17,4 +17,4 @@ typedef char				byte;
 
 #define FORCEINLINE			__forceinline
 
-#define ASSERT		
+#define ROCKETASSERT		
