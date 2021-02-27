@@ -5,13 +5,20 @@
 
 namespace Rocket
 {
-
 	class Engine
 	{
 	public:
 		bool Init();
 		int32 Run();
 		void Shutdown();
+
+		FORCEINLINE MemoryManager* GetMemoryManager() {
+			return m_MemoryManager;
+		}
+
+		FORCEINLINE RendererManager* GetRenderManager() {
+			return m_RendererManager;
+		}
 
 	protected:
 		bool InitEngineSystems();
@@ -46,8 +53,10 @@ namespace Rocket
 		 * These objects are owned exclusively by the engine and represent the modules that make up the core engine functionality.
 		 */
 		MemoryManager* m_MemoryManager;
-		//WindowSystem* m_WindowSystem;
-		//Renderer* m_Renderer;
+		WindowManager* m_WindowManager;
+		RendererManager* m_RendererManager;
 		//SceneManager* m_SceneManager;
 	};
+
+	extern Engine* gEngine;
 }

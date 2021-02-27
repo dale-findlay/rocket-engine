@@ -92,10 +92,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\include;$(SolutionDir)rocket-engine\dependencies\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\lib;$(SolutionDir)rocket-engine\dependencies\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -106,12 +109,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\include;$(SolutionDir)rocket-engine\dependencies\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\lib;$(SolutionDir)rocket-engine\dependencies\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -120,10 +126,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\include;$(SolutionDir)rocket-engine\dependencies\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\lib;$(SolutionDir)rocket-engine\dependencies\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -134,12 +143,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\include;$(SolutionDir)rocket-engine\dependencies\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\lib;$(SolutionDir)rocket-engine\dependencies\glew\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -150,8 +162,14 @@
     <ClCompile Include="src\runtime\memory\allocators\FreeListAllocator.cpp" />
     <ClCompile Include="src\runtime\memory\allocators\LinearAllocator.cpp" />
     <ClCompile Include="src\runtime\memory\allocators\PoolAllocator.cpp" />
+    <ClCompile Include="src\runtime\memory\allocators\MemoryAllocator.cpp" />
     <ClCompile Include="src\runtime\memory\MemoryManager.cpp" />
     <ClCompile Include="src\runtime\memory\allocators\StackAllocator.cpp" />
+    <ClCompile Include="src\runtime\renderering\Renderer.cpp" />
+    <ClCompile Include="src\runtime\renderering\RendererManager.cpp" />
+    <ClCompile Include="src\runtime\renderering\renderers\ForwardRenderer.cpp" />
+    <ClCompile Include="src\runtime\window\WindowManager.cpp" />
+    <ClCompile Include="src\runtime\window\windows\Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\CoreTypes.h" />
@@ -162,10 +180,18 @@
     <ClInclude Include="src\runtime\memory\allocators\FreeListAllocator.h" />
     <ClInclude Include="src\runtime\memory\allocators\LinearAllocator.h" />
     <ClInclude Include="src\runtime\memory\allocators\PoolAllocator.h" />
+    <ClInclude Include="src\runtime\memory\allocators\MemoryAllocator.h" />
     <ClInclude Include="src\runtime\memory\utilities\AllocatorUtility.h" />
     <ClInclude Include="src\runtime\memory\MemoryManager.h" />
     <ClInclude Include="src\runtime\memory\allocators\StackAllocator.h" />
+    <ClInclude Include="src\runtime\renderering\commands\RenderCommand.h" />
+    <ClInclude Include="src\runtime\renderering\Renderer.h" />
+    <ClInclude Include="src\runtime\renderering\RendererManager.h" />
+    <ClInclude Include="src\runtime\renderering\renderers\ForwardRenderer.h" />
     <ClInclude Include="src\runtime\Subsystems.h" />
+    <ClInclude Include="src\runtime\window\windows\Win32Window.h" />
+    <ClInclude Include="src\runtime\window\windows\Window.h" />
+    <ClInclude Include="src\runtime\window\WindowManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

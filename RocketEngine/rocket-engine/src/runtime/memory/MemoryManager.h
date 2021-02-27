@@ -3,23 +3,63 @@
 #include "core/EngineSubsystem.h"
 #include "runtime/memory/Allocators.h"
 
-namespace Rocket {
+#include <vector>
+
+namespace Rocket 
+{
+	enum class MemoryAllocatorType {
+		Stack,
+		FreeList,
+		Linear,
+		Pool
+	};
+
+	struct MemoryAllocatorCreateInfo 
+	{		
+		MemoryAllocatorType type;
+		rkstring name;
+		size_t maxSize;
+
+		//For pool allocator
+		size_t pool_blockSize;
+		uint8 pool_blockAlignment;
+
+		Memory::MemoryAllocator* pAllocator;
+	};
 
 	class MemoryManager : public EngineSubsystem
 	{
 	public:
+		MemoryManager();
+
 		virtual bool Init() override;
 		virtual void Shutdown() override;
-		
-		void GetStackAllocator();
 
-	private:		
+		Memory::MemoryAllocator* CreateMemoryAllocator(const MemoryAllocatorCreateInfo& createInfo);
+
+	private:
+		void* AllocateInternal(size_t blockSize);
+		void DeallocateInternal(void* p);
+
+		void AllocateGlobalEngineMemory();
+		void FreeGlobalEngineMemory();
+
+		/**
+		 * Register a memory allocator.
+		 */
+		void RegisterMemoryAllocator(const MemoryAllocatorCreateInfo& createInfo, Memory::MemoryAllocator* allocator);
+		void CleanupRegisteredAllocators();
+
+	private:	
 		/**
 		 * Allocators
 		 * As memory allocation is rarely a one size fits all problem, multiple allocators are used.
 		 * The memory manager is in charge on owning and managing the various allocators.
 		 */
-		 //StackAllocator* m_GlobalChunkAllocator;
 
+		 //This is the allocator that owns pretty much all the memory in the engine.
+		 Memory::FreeListAllocator* m_GlobalMemoryAllocator;
+
+		 std::vector<MemoryAllocatorCreateInfo> m_MemoryAllocators;
 	};
 }

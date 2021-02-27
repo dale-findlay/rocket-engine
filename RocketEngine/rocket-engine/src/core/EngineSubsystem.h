@@ -8,6 +8,8 @@ namespace Rocket
 	class EngineSubsystem
 	{
 	public:
+		EngineSubsystem();
+
 		virtual bool Init() = 0;
 		virtual void Shutdown() = 0;
 
@@ -31,5 +33,6 @@ namespace Rocket
 		bool m_Initialized;
 		//Has this system been shutdown.
 		bool m_Shutdown;
+
 	};
 }
