@@ -1,5 +1,5 @@
 #include "ForwardRenderer.h"
-
+#include "runtime/Engine.h"
 #include "GLFW/glfw3.h"
 
 Rocket::Rendering::ForwardRenderer::ForwardRenderer()
@@ -9,6 +9,8 @@ Rocket::Rendering::ForwardRenderer::ForwardRenderer()
 bool Rocket::Rendering::ForwardRenderer::Init()
 {
     Renderer::Init();
+    
+    gEngine->GetWindowManager()->GetWindow()->MakeContextCurrent();
 
     glClearColor(0, 0, 0, 1);    
     return true;

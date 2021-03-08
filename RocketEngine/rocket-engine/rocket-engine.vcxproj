@@ -92,7 +92,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\include;$(SolutionDir)rocket-engine\dependencies\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\include;$(SolutionDir)rocket-engine\dependencies\glew\include;$(SolutionDir)rocket-engine\dependencies\stduuid\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -109,7 +110,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\include;$(SolutionDir)rocket-engine\dependencies\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\include;$(SolutionDir)rocket-engine\dependencies\glew\include;$(SolutionDir)rocket-engine\dependencies\stduuid\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -126,7 +128,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\include;$(SolutionDir)rocket-engine\dependencies\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\include;$(SolutionDir)rocket-engine\dependencies\glew\include;$(SolutionDir)rocket-engine\dependencies\stduuid\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,7 +146,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\include;$(SolutionDir)rocket-engine\dependencies\glew\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)rocket-engine\dependencies\glfw\include;$(SolutionDir)rocket-engine\dependencies\glew\include;$(SolutionDir)rocket-engine\dependencies\stduuid\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -156,8 +160,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\core\EngineSubsystem.cpp" />
+    <ClCompile Include="src\core\Factory.cpp" />
     <ClCompile Include="src\Launch.cpp" />
+    <ClCompile Include="src\runtime\assetmanagement\RocketAssetManager.cpp" />
+    <ClCompile Include="src\runtime\core\UniqueId.cpp" />
     <ClCompile Include="src\runtime\Engine.cpp" />
+    <ClCompile Include="src\runtime\entitysystem\EntityFactory.cpp" />
     <ClCompile Include="src\runtime\memory\allocators\Allocator.cpp" />
     <ClCompile Include="src\runtime\memory\allocators\FreeListAllocator.cpp" />
     <ClCompile Include="src\runtime\memory\allocators\LinearAllocator.cpp" />
@@ -168,13 +176,25 @@
     <ClCompile Include="src\runtime\renderering\Renderer.cpp" />
     <ClCompile Include="src\runtime\renderering\RendererManager.cpp" />
     <ClCompile Include="src\runtime\renderering\renderers\ForwardRenderer.cpp" />
+    <ClCompile Include="src\runtime\resourcemanagement\ResourceManager.cpp" />
+    <ClCompile Include="src\runtime\scene\SceneManager.cpp" />
     <ClCompile Include="src\runtime\window\WindowManager.cpp" />
     <ClCompile Include="src\runtime\window\windows\Win32Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\core\CoreTypes.h" />
+    <ClInclude Include="src\core\CoreMacros.h" />
+    <ClInclude Include="src\core\CoreMinimal.h" />
     <ClInclude Include="src\core\EngineSubsystem.h" />
+    <ClInclude Include="src\core\Factory.h" />
+    <ClInclude Include="src\core\CoreTypes.h" />
+    <ClInclude Include="src\runtime\assetmanagement\Asset.h" />
+    <ClInclude Include="src\runtime\assetmanagement\AssetBin.h" />
+    <ClInclude Include="src\runtime\assetmanagement\RocketAssetFactory.h" />
+    <ClInclude Include="src\runtime\assetmanagement\RocketAssetManager.h" />
+    <ClInclude Include="src\runtime\core\Entity.h" />
+    <ClInclude Include="src\runtime\core\UniqueId.h" />
     <ClInclude Include="src\runtime\Engine.h" />
+    <ClInclude Include="src\runtime\entitysystem\EntityFactory.h" />
     <ClInclude Include="src\runtime\memory\allocators\Allocator.h" />
     <ClInclude Include="src\runtime\memory\Allocators.h" />
     <ClInclude Include="src\runtime\memory\allocators\FreeListAllocator.h" />
@@ -188,6 +208,9 @@
     <ClInclude Include="src\runtime\renderering\Renderer.h" />
     <ClInclude Include="src\runtime\renderering\RendererManager.h" />
     <ClInclude Include="src\runtime\renderering\renderers\ForwardRenderer.h" />
+    <ClInclude Include="src\runtime\resourcemanagement\ResourceManager.h" />
+    <ClInclude Include="src\runtime\scene\Scene.h" />
+    <ClInclude Include="src\runtime\scene\SceneManager.h" />
     <ClInclude Include="src\runtime\Subsystems.h" />
     <ClInclude Include="src\runtime\window\windows\Win32Window.h" />
     <ClInclude Include="src\runtime\window\windows\Window.h" />

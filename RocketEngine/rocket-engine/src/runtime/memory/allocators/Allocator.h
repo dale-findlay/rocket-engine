@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core/CoreTypes.h"
+#include "core/CoreMinimal.h"
 #include "runtime/memory/utilities/AllocatorUtility.h"
 
 namespace Rocket {

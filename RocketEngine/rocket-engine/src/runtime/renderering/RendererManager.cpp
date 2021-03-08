@@ -6,7 +6,7 @@
 #include "runtime/renderering/renderers/ForwardRenderer.h"
 
 Rocket::RendererManager::RendererManager()
-    : EngineSubsystem()
+    : EngineSubsystem(), m_MemoryAllocator(nullptr)
 {}
 
 bool Rocket::RendererManager::Init()

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core/CoreTypes.h"
+#include "core/CoreMinimal.h"
 #include "runtime/renderering/commands/RenderCommand.h"
 #include "runtime/memory/allocators/LinearAllocator.h"
 #include <vector>

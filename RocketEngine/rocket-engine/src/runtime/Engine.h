@@ -1,6 +1,6 @@
 #pragma once
 
-#include "core/CoreTypes.h"
+#include "core/CoreMinimal.h"
 #include "runtime/Subsystems.h"
 
 namespace Rocket
@@ -20,6 +20,14 @@ namespace Rocket
 			return m_RendererManager;
 		}
 
+		FORCEINLINE WindowManager* GetWindowManager() {
+			return m_WindowManager;
+		}
+
+		FORCEINLINE SceneManager* GetSceneManager() {
+			return m_SceneManager;
+		}
+
 	protected:
 		bool InitEngineSystems();
 		void ShutdownEngineSystems();
@@ -28,7 +36,7 @@ namespace Rocket
 		void ShutdownGameSystems();
 
 		/**
-		 * Resets the state of the engine to an un-initialized state.
+		 * Resets the state of the engine to an uninitialized state.
 		 */
 		void ResetRuntimeExecutionFlags();
 
@@ -55,7 +63,7 @@ namespace Rocket
 		MemoryManager* m_MemoryManager;
 		WindowManager* m_WindowManager;
 		RendererManager* m_RendererManager;
-		//SceneManager* m_SceneManager;
+		SceneManager* m_SceneManager;
 	};
 
 	extern Engine* gEngine;

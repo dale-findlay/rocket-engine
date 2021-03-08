@@ -78,11 +78,25 @@ bool Rocket::Engine::InitEngineSystems()
 		return false;
     }
 
+	m_SceneManager = new Rocket::SceneManager();
+	if (!m_SceneManager->Init())
+	{
+        m_SceneManager->Shutdown();
+		return false;
+	}
+
     return true;
 }
 
 void Rocket::Engine::ShutdownEngineSystems()
 {
+	if (m_SceneManager != nullptr)
+	{
+		m_SceneManager->Shutdown();
+		delete m_SceneManager;
+		m_SceneManager = nullptr;
+	}
+
 	if (m_RendererManager != nullptr)
 	{
 		m_RendererManager->Shutdown();

@@ -60,12 +60,30 @@
     <ClCompile Include="src\runtime\renderering\RendererManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\runtime\scene\SceneManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\runtime\entitysystem\EntityFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\runtime\core\UniqueId.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\runtime\resourcemanagement\ResourceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\runtime\assetmanagement\RocketAssetManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\Factory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\runtime\Engine.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\CoreTypes.h">
+    <ClInclude Include="src\core\CoreMinimal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\core\EngineSubsystem.h">
@@ -120,6 +138,45 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\runtime\renderering\RendererManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\scene\Scene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\scene\SceneManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\core\Entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\entitysystem\EntityFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\core\UniqueId.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\resourcemanagement\ResourceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\assetmanagement\AssetBin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\assetmanagement\Asset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\assetmanagement\RocketAssetManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\runtime\assetmanagement\RocketAssetFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\Factory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\CoreTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\CoreMacros.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
